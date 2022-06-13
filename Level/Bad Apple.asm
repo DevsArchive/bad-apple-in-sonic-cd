@@ -109,7 +109,7 @@ GetBadAppleData:
 	
 	jsr	StopZ80				; Stop the Z80
 	lea	VDPCTRL,a5			; VDP control port
-	move.l	#$94089300,(a5)			; DMA palette buffer
+	move.l	#$94089300,(a5)			; DMA map buffer
 	move.l	#$96009500|(((BadAppleMapBuf+2)>>1)&$FF)|(((BadAppleMapBuf+2)<<7)&$FF0000),(a5)
 	move.w	#$9700|(((BadAppleMapBuf+2)>>17)&$7F),(a5)
 	move.w	#$4000,(a5)
@@ -135,7 +135,7 @@ GetBadAppleDataEnd:
 ; -------------------------------------------------------------------------
 
 Art_BadAppleRings:
-	incbin	"Level/Bad Apple/Rings.bin"
+	incbin	"Level/_Data/Bad Apple/Rings.bin"
 	even
 
 ; -------------------------------------------------------------------------
