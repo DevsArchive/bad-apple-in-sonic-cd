@@ -115,6 +115,8 @@ GetBadAppleData:
 	move.w	#$4000,(a5)
 	move.w	#$83,-(sp)
 	move.w	(sp)+,(a5)
+	move.l	#$400000083,(a5)
+	move.l	BadAppleMapBuf,-4(a5)
 	jsr	StartZ80			; Start the Z80
 
 .Stop:
